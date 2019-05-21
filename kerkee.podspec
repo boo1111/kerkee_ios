@@ -49,9 +49,9 @@ Pod::Spec.new do |s|
   non_arc_files = 'kerkee/Browser/WebView/KCUtilWebView.{h,m}'
 
   s.subspec 'no-arc' do |ss|
-    s.requires_arc = false
-    s.frameworks = "UIKit", "Foundation" #支持的框架
-    s.source_files = non_arc_files
+    ss.requires_arc = false
+    ss.frameworks = "UIKit", "Foundation" #支持的框架
+    ss.source_files = non_arc_files
   end
   # s.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include/libxml2" }
   # s.dependency "JSONKit", "~> 1.4"

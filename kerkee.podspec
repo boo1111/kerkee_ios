@@ -44,17 +44,15 @@ Pod::Spec.new do |s|
   s.library   = "z"
   # s.libraries = "iconv", "xml2"
 
-
   s.requires_arc = true
-  non_arc_files = 'kerkee/Browser/WebView/KCUtilWebView.{h,m}'
-
-  s.subspec 'no-arc' do |ss|
-    ss.requires_arc = false
-    ss.frameworks = "UIKit", "Foundation" #支持的框架
-    ss.source_files = non_arc_files
-  end
+  # non_arc_files = 'kerkee/Browser/WebView/KCUtilWebView.{h,m}'
+  # s.exclude_files = non_arc_files
+  # s.subspec 'no-arc' do |ss|
+    # ss.requires_arc = false
+    # ss.frameworks = "UIKit", "Foundation" #支持的框架
+    # ss.source_files = non_arc_files
+  # end
   # s.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include/libxml2" }
-  # s.dependency "JSONKit", "~> 1.4"
   s.dependency 'SSKeychain','~>1.2.3'
   # s.dependency 'Reachability'
 

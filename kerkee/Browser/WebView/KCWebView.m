@@ -16,8 +16,6 @@
 #import "KCWKWebView.h"
 #import "UIAlertView+Blocks.h"
 #import "KCUtilDevice.h"
-#import "KCUtilWebView.h"
-
 
 @interface KCUIWebView ()
 @property (nonatomic, assign) id scrollViewDelegate;
@@ -27,9 +25,6 @@
 @property (nonatomic, assign) id scrollViewDelegate;
 @end
 
-@interface KCUtilWebView ()
-+ (void)setWebViewUserAgent:(NSString*)aUserAgent webView:(KCWebView*)aWebView;
-@end
 
 
 @interface KCWebView () <UIWebViewDelegate, KCWebViewProgressDelegate, WKNavigationDelegate, WKUIDelegate>
@@ -43,7 +38,6 @@
     BOOL m_isPageScrollOn;
     KCWebImageSetter* m_imageSetter;
     int m_webViewID;
-    NSString* m_customUserAgent;
 }
 
 @property (nonatomic, assign) double estimatedProgress;
@@ -551,11 +545,6 @@ static int createWebViewID = 1;
     }
 }
 
-- (void)setCustomUserAgent:(NSString *)aCustomUserAgent
-{
-    m_customUserAgent = aCustomUserAgent;
-    [KCUtilWebView setWebViewUserAgent:aCustomUserAgent webView:self];
-}
 
 - (BOOL)isLoading
 {   

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		AA43B66254F6F1E7CFB5FA58 /* Pods_kerkeeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EA5A257C1BFFB6A5CECA607 /* Pods_kerkeeTests.framework */; };
+		DF1F941B2293F1B300CD01E0 /* kerkee.podspec in Resources */ = {isa = PBXBuildFile; fileRef = DF1F941A2293F1B300CD01E0 /* kerkee.podspec */; };
 		DF30750B1B959B01005AA030 /* kerkee.h in Headers */ = {isa = PBXBuildFile; fileRef = DF30750A1B959B01005AA030 /* kerkee.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DF3075111B959B01005AA030 /* kerkee.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF3075051B959B01005AA030 /* kerkee.framework */; };
 		DF3075181B959B01005AA030 /* kerkeeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DF3075171B959B01005AA030 /* kerkeeTests.m */; };
@@ -382,6 +383,7 @@
 		01F8467374ABFED8E4E6C457 /* Pods_kerkee.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_kerkee.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		812D9BCA339A805C8638CE0C /* Pods-kerkeeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-kerkeeTests.release.xcconfig"; path = "Target Support Files/Pods-kerkeeTests/Pods-kerkeeTests.release.xcconfig"; sourceTree = "<group>"; };
 		9EA5A257C1BFFB6A5CECA607 /* Pods_kerkeeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_kerkeeTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DF1F941A2293F1B300CD01E0 /* kerkee.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = kerkee.podspec; sourceTree = "<group>"; };
 		DF3075051B959B01005AA030 /* kerkee.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = kerkee.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF3075091B959B01005AA030 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DF30750A1B959B01005AA030 /* kerkee.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = kerkee.h; sourceTree = "<group>"; };
@@ -610,6 +612,7 @@
 		DF3074FB1B959B01005AA030 = {
 			isa = PBXGroup;
 			children = (
+				DF1F941A2293F1B300CD01E0 /* kerkee.podspec */,
 				DF9BCE501C3A5E800097A767 /* libz.tbd */,
 				DF3075071B959B01005AA030 /* kerkee */,
 				DF3075141B959B01005AA030 /* kerkeeTests */,
@@ -1184,6 +1187,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DF1F941B2293F1B300CD01E0 /* kerkee.podspec in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

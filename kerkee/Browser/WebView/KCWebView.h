@@ -28,7 +28,9 @@ NS_ASSUME_NONNULL_BEGIN
 @interface KCWebView : UIView
 
 - (instancetype)initWithFrame:(CGRect)aFrame;
-- (instancetype)initWithFrame:(CGRect)aFrame usingUIWebView:(BOOL)aIsUsingUIWebView; 
+- (instancetype)initWithFrame:(CGRect)aFrame usingUIWebView:(BOOL)aIsUsingUIWebView;
+
+- (instancetype)initWithFrame:(CGRect)aFrame usingUIWebView:(BOOL)aIsUsingUIWebView configuration:(id)configuration;
 
 @property (nonatomic, readonly) id realWebView;
 

@@ -410,10 +410,4 @@ didReceiveResponse:(NSURLResponse *)aResponse
 {
     return m_webview;
 }
-
-
-
-
-
-
 @end

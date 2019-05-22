@@ -40,6 +40,10 @@
 
 +(NSString *)matchingAbsoluteDirectoryForPath:(NSString *)aPath
 {
+    if (aPath == nil)
+    {
+        return nil;
+    }
     [self assertPath:aPath];
     
     if([aPath isEqualToString:@"/"])
@@ -87,6 +91,10 @@
 
 +(void)assertPath:(NSString *)path
 {
+    if (path == nil)
+    {
+        return;
+    }
     NSAssert(path != nil, @"Invalid path. Path cannot be nil.");
     NSAssert(![path isEqualToString:@""], @"Invalid path. Path cannot be empty string.");
 }

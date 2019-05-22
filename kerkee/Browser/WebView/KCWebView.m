@@ -17,6 +17,7 @@
 #import "UIAlertView+Blocks.h"
 #import "KCUtilDevice.h"
 
+
 @interface KCUIWebView ()
 @property (nonatomic, assign) id scrollViewDelegate;
 @end
@@ -69,7 +70,7 @@ static int createWebViewID = 1;
     self = [super initWithCoder:aCoder];
     if (self)
     {
-        [self initWebView];
+        [self initWebView:nil];
     }
     return self;
 }
@@ -87,12 +88,23 @@ static int createWebViewID = 1;
     if (self)
     {
         m_isUsingUIWebView = aIsUsingUIWebView;
-        [self initWebView];
+        [self initWebView:nil];
     }
     return self;
 }
 
-- (void)initWebView
+- (instancetype)initWithFrame:(CGRect)aFrame usingUIWebView:(BOOL)aIsUsingUIWebView configuration:(id)configuration
+{
+    self = [super initWithFrame:aFrame];
+    if (self)
+    {
+        m_isUsingUIWebView = aIsUsingUIWebView;
+        [self initWebView:configuration];
+    }
+    return self;
+}
+
+- (void)initWebView:(WKWebViewConfiguration *)config
 {
     m_webViewID = createWebViewID++;
     m_threshold = 0;
@@ -101,7 +113,7 @@ static int createWebViewID = 1;
     Class wkWebView = NSClassFromString(@"WKWebView");
     if (wkWebView && m_isUsingUIWebView == NO && SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"9.0"))
     {
-        [self initWKWebView];
+        [self initWKWebView:config];
         m_isUsingUIWebView = NO;
     }
     else
@@ -119,30 +131,24 @@ static int createWebViewID = 1;
     m_imageSetter = [[KCWebImageSetter alloc] init];
 }
 
-
-+ (WKProcessPool *)singleWkProcessPool
+- (void)initWKWebView:(WKWebViewConfiguration *)config
 {
-    static dispatch_once_t once;
-    static WKProcessPool * singleton;
-    dispatch_once( &once, ^{ singleton = [[WKProcessPool alloc] init]; } );
-    return singleton;
-}
-
-- (void)initWKWebView
-{
-    WKWebViewConfiguration* configuration = [[NSClassFromString(@"WKWebViewConfiguration") alloc] init];
-    configuration.userContentController = [NSClassFromString(@"WKUserContentController") new];
-    
-    WKPreferences* preferences = [NSClassFromString(@"WKPreferences") new];
-    preferences.javaScriptCanOpenWindowsAutomatically = YES;
-    configuration.preferences = preferences;
-    //使用单例 解决locastorage 储存问题
-    configuration.processPool = [KCWebView singleWkProcessPool];
+    WKWebViewConfiguration* configuration = config;
+    if (!configuration)
+    {
+        configuration = [[NSClassFromString(@"WKWebViewConfiguration") alloc] init];
+        configuration.userContentController = [NSClassFromString(@"WKUserContentController") new];
+    }
+    if (!configuration.preferences)
+    {
+        WKPreferences* preferences = [NSClassFromString(@"WKPreferences") new];
+        preferences.javaScriptCanOpenWindowsAutomatically = YES;
+        configuration.preferences = preferences;
+    }
     
     KCWKWebView* webView = [[NSClassFromString(@"KCWKWebView") alloc] initWithFrame:self.bounds configuration:configuration];
     webView.UIDelegate = self;
     webView.navigationDelegate = self;
-    
     webView.scrollViewDelegate = self;
 
     webView.backgroundColor = [UIColor clearColor];

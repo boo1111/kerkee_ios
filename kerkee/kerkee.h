@@ -21,70 +21,82 @@ FOUNDATION_EXPORT const unsigned char kerkeeVersionString[];
 
 
 #pragma mark - base class
-#import "KCBaseDefine.h"
-#import "KCFileArchiver.h"
-#import "KCObject.h"
-#import "KCRuntime.h"
-#import "KCSandbox.h"
-#import "KCSingleton.h"
-#import "KCTaskQueue.h"
-#import "NSData+HMAC.h"
-#import "NSDate+KCDate.h"
-#import "NSObject+KCCoding.h"
-#import "NSObject+KCNotification.h"
-#import "NSObject+KCObjectInfo.h"
-#import "NSObject+KCObserver.h"
-#import "NSObject+KCProperty.h"
-#import "NSObject+KCSelector.h"
-#import "NSObject+KCTicker.h"
-#import "NSString+KCExtension.h"
+#import <kerkee/KCBaseDefine.h>
+#import <kerkee/KCFileArchiver.h>
+#import <kerkee/KCObject.h>
+#import <kerkee/KCRuntime.h>
+#import <kerkee/KCSandbox.h>
+#import <kerkee/KCSingleton.h>
+#import <kerkee/KCTaskQueue.h>
+#import <kerkee/NSData+HMAC.h>
+#import <kerkee/NSDate+KCDate.h>
+#import <kerkee/NSObject+KCCoding.h>
+#import <kerkee/NSObject+KCNotification.h>
+#import <kerkee/NSObject+KCObjectInfo.h>
+#import <kerkee/NSObject+KCObserver.h>
+#import <kerkee/NSObject+KCProperty.h>
+#import <kerkee/NSObject+KCSelector.h>
+#import <kerkee/NSObject+KCTicker.h>
+#import <kerkee/NSString+KCExtension.h>
 
 #pragma mark - cache
-#import "KCCache.h"
-#import "KCCacheKit.h"
-#import "KCDataValidCache.h"
-#import "KCFileCache.h"
-#import "KCImageCache.h"
-#import "KCImagePreCache.h"
-#import "KCMemoryCache.h"
+#import <kerkee/KCCache.h>
+#import <kerkee/KCCacheKit.h>
+#import <kerkee/KCDataValidCache.h>
+#import <kerkee/KCFileCache.h>
+#import <kerkee/KCImageCache.h>
+#import <kerkee/KCImagePreCache.h>
+#import <kerkee/KCMemoryCache.h>
 
 #pragma mark - coder
-//#import "NSData+AES256.h"
-#import "NSData+Base64.h"
+//#import <kerkee/NSData+AES256.h>
+#import <kerkee/NSData+Base64.h>
 
 #pragma mark - debug
-#import "KCLog.h"
+#import <kerkee/KCLog.h>
 
 #pragma mark - util
-#import "KCArchiver.h"
-#import "KCMainBundle.h"
-#import "KCUtilCoding.h"
-#import "KCUtilDevice.h"
-#import "KCUtilFile.h"
-#import "KCUtilGzip.h"
-#import "KCUtilMd5.h"
-#import "KCUtilNet.h"
-#import "KCUtilURL.h"
+#import <kerkee/KCArchiver.h>
+#import <kerkee/KCMainBundle.h>
+#import <kerkee/KCUtilCoding.h>
+#import <kerkee/KCUtilDevice.h>
+#import <kerkee/KCUtilFile.h>
+#import <kerkee/KCUtilGzip.h>
+#import <kerkee/KCUtilMd5.h>
+#import <kerkee/KCUtilNet.h>
+#import <kerkee/KCUtilURL.h>
 
 
 #pragma mark - browser
-#import "KCWebView.h"
-#import "KCWebPath.h"
+#import <kerkee/KCWebView.h>
+#import <kerkee/KCWebPath.h>
 
 #pragma mark - bridge
-#import "KCJSBridge.h"
-#import "KCArg.h"
-#import "KCArgList.h"
-#import "KCClass.h"
-#import "KCRegister.h"
-#import "KCClassParser.h"
-#import "KCMethod.h"
+#import <kerkee/KCJSBridge.h>
+#import <kerkee/KCArg.h>
+#import <kerkee/KCArgList.h>
+#import <kerkee/KCClass.h>
+#import <kerkee/KCRegister.h>
+#import <kerkee/KCClassParser.h>
+#import <kerkee/KCMethod.h>
 
-#import "KCJSObject.h"
+#import <kerkee/KCJSObject.h>
 
 #pragma mark - uri
-#import "KCURI.h"
+#import <kerkee/KCURI.h>
 
 #pragma mark - file
-#import "KCFile.h"
+#import <kerkee/KCFile.h>
+#import <kerkee/KCUriRegister.h>
+#import <kerkee/KCUriActionDelegate.h>
+#import <kerkee/KCFetchManifest.h>
+#import <kerkee/KCManifestObject.h>
+#import <kerkee/KCString.h>
+#import <kerkee/UIWebView+KCClean.h>
+#import <kerkee/KCUriDispatcher.h>
+#import <kerkee/KCApiBridge.h>
+#import <kerkee/KCFileManager.h>
+#import <kerkee/KCJSCompileExecutor.h>
+#import <kerkee/SSKeychain.h>
+
 

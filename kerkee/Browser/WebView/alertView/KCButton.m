@@ -4,7 +4,7 @@
 @interface KCButton()
 {
     NSString* label;
-    void (^action)();
+    void (^action)(void);
 }
 @end
 

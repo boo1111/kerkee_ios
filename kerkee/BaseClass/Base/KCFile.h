@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <KCURI.h>
+#import "KCURI.h"
 
 @interface KCFile : NSObject
 

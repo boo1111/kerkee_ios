@@ -18,5 +18,5 @@
 @end
 
 // Gzip functionality - compression level in range 0 - 1 (-1 for default)
-KC_EXTERN NSData *gzipData(NSData *data, float level);
-KC_EXTERN BOOL isGzippedData(NSData *data);
+KC_EXTERN NSData *kc_gzipData(NSData *data, float level);
+KC_EXTERN BOOL kc_isGzippedData(NSData *data);

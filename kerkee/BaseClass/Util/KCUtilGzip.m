@@ -153,15 +153,15 @@
 }
 
 
-BOOL isGzippedData(NSData *data)
+BOOL kc_isGzippedData(NSData *data)
 {
     UInt8 *bytes = (UInt8 *)data.bytes;
     return (data.length >= 2 && bytes[0] == 0x1f && bytes[1] == 0x8b);
 }
 
-NSData *gzipData(NSData *input, float level)
+NSData *kc_gzipData(NSData *input, float level)
 {
-    if (input.length == 0 || isGzippedData(input)) {
+    if (input.length == 0 || kc_isGzippedData(input)) {
         return input;
     }
     

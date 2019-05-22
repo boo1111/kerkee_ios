@@ -97,6 +97,5 @@ FOUNDATION_EXPORT const unsigned char kerkeeVersionString[];
 #import <kerkee/KCApiBridge.h>
 #import <kerkee/KCFileManager.h>
 #import <kerkee/KCJSCompileExecutor.h>
-#import <kerkee/SSKeychain.h>
 
 

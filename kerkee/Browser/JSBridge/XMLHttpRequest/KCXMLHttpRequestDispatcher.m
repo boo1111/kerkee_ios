@@ -102,7 +102,7 @@
         NSUInteger nSegmentCount = list.count;
         if (nSegmentCount > 0)
         {
-            NSString* tmpPath = [url startsWithChar:'/'] ? url : [NSString stringWithFormat:@"/%@", url];
+            NSString* tmpPath = [url kc_startsWithChar:'/'] ? url : [NSString stringWithFormat:@"/%@", url];
             NSString* tmpPort = port.length > 0 ? [NSString stringWithFormat:@":%@", port] : @"";
             url = [NSString stringWithFormat:@"%@//%@%@%@",scheme, host, tmpPort, tmpPath];
             KCLog(@"%@", url);

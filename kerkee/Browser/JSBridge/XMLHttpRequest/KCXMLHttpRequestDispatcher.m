@@ -93,7 +93,7 @@
     NSString *host = [aArgs getString:@"host"];
     NSString *port = [self objectInArgList:aArgs forKey:@"port" defaultValue:@""];
     NSString *href = [aArgs getString:@"href"];
-    
+    NSString *timeout = [aArgs getString:@"timeout"];
     KCURI* uriUrl = [KCURI parse:url];
     BOOL isRelative = [uriUrl isRelative];
     if (isRelative)

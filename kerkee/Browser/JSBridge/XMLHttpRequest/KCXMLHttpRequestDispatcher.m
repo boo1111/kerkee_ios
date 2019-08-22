@@ -114,7 +114,7 @@
     }
     
     
-    [xhr open:method url:url userAgent:userAgent referer:referer cookie:cookie];
+    [xhr open:method url:url userAgent:userAgent referer:referer cookie:cookie timeout:timeout];
 //    BACKGROUND_COMMIT
 }
 

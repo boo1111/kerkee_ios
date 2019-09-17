@@ -10,6 +10,7 @@
 #import "NSString+KCExtension.h"
 #import "KCBaseDefine.h"
 #import "KCUtilMd5.h"
+#import "KCURIComponents.h"
 
 #pragma mark -
 
@@ -96,10 +97,15 @@
 - (NSString *)kc_urlByAppendingDict:(NSDictionary *)params
 {
     NSString* paramsToken = (params != nil && params.count > 0) ? @"?" :@"";
+    KCURIComponents *co = [KCURIComponents componentsWithString:self];
+    NSString* fragment = [co fragment];
     NSURL * parsedURL = [NSURL URLWithString:self];
-	NSString * queryPrefix = parsedURL.query ? @"&" : paramsToken;
-	NSString * query = [self kc_queryStringFromDictionary:params];
-	return [NSString stringWithFormat:@"%@%@%@", self, queryPrefix, query];
+    NSString * queryPrefix = parsedURL.query ? @"&" : paramsToken;
+    if ([fragment containsString:@"?"]) {
+        queryPrefix = @"&";
+    }
+    NSString * query = [self kc_queryStringFromDictionary:params];
+    return [NSString stringWithFormat:@"%@%@%@", self, queryPrefix, query];
 }
 
 - (NSString *)kc_queryStringFromArray:(NSArray *)array

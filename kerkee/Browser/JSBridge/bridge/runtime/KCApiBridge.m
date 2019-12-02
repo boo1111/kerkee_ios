@@ -28,7 +28,7 @@ static BOOL sIsOpenJSLog = true;
 {
 }
 
-@property (nonatomic, assign)id m_userDelegate;
+@property (nonatomic, weak)id m_userDelegate;
 
 
 /* notified when a message is pushed/delievered on the JS side */

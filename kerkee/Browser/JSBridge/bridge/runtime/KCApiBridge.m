@@ -317,13 +317,13 @@ static BOOL sIsOpenJSLog = true;
 #pragma mark - 
 + (void)callbackJSOnHitPageBottom:(KCWebView*)aWebView y:(CGFloat)aY
 {
-    NSString* js = [NSString stringWithFormat:@"if(jsBridgeClient && jsBridgeClient.onHitPageBottom) jsBridgeClient.onHitPageBottom(%f)", aY];
+    NSString* js = [NSString stringWithFormat:@"if(window.jsBridgeClient && jsBridgeClient.onHitPageBottom) jsBridgeClient.onHitPageBottom(%f)", aY];
     [KCJSExecutor callJSOnMainThread:js inWebView:aWebView completionHandler:nil];
 }
 
 + (void)callbackJSOnPageScroll:(KCWebView*)aWebView x:(CGFloat)aX y:(CGFloat)aY width:(CGFloat)aWidth height:(CGFloat)aHeight
 {
-    NSString* js = [NSString stringWithFormat:@"if(jsBridgeClient && jsBridgeClient.onPageScroll) jsBridgeClient.onPageScroll(%f,%f,%f,%f)",aX, aY, aWidth, aHeight];
+    NSString* js = [NSString stringWithFormat:@"if(window.jsBridgeClient && jsBridgeClient.onPageScroll) jsBridgeClient.onPageScroll(%f,%f,%f,%f)",aX, aY, aWidth, aHeight];
     [KCJSExecutor callJSOnMainThread:js inWebView:aWebView completionHandler:nil];
 }
 

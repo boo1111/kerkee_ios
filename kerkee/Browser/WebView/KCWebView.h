@@ -34,6 +34,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, readonly) id realWebView;
 
+@property (nonatomic , strong) NSDictionary *xhrHeaders;
+
 // Will agent to WKUIDelegate WKNavigationDelegate internal unrealized callback.
 @property (weak, nonatomic) id<KCWebViewDelegate> delegate;
 
